@@ -1,15 +1,16 @@
 -- Install package manager
 --    https://github.com/wbthomason/packer.nvim
-local packerpath = vim.fn.stdpath 'data' .. '/pack/packer/start/packer.nvim'
-if not vim.loop.fs_stat(packerpath) then
-  vim.fn.system {
-    'git',
-    'clone',
-    '--depth 1',
-    'https://github.com/wbthomason/packer.nvim',
-    packerpath,
-  }
-end
+--local packerpath = vim.fn.stdpath('data') .. '/pack/packer/start/packer.nvim'
+--if not vim.loop.fs_stat(packerpath) then
+--  vim.fn.system {
+--    'git',
+--    'clone',
+--    '--depth 1',
+--    'https://github.com/wbthomason/packer.nvim',
+--    packerpath,
+--  }
+--end
+--vim.opt.rtp:prepend(packerpath)
 
 vim.cmd [[packadd packer.nvim]]
 
@@ -19,7 +20,10 @@ require('packer').startup(function(use)
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.2',
 		-- or                            , branch = '0.1.x',
-		requires = { {'nvim-lua/plenary.nvim'} }
+		requires = {
+			{'nvim-lua/plenary.nvim'},
+			{'BurntSushi/ripgrep'}
+		}
 	}
 end)
 
@@ -38,7 +42,7 @@ vim.keymap.set("i", "jk", "<esc>")
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
---vim.keymap.set('n', '<leader>ps', function()
+--vim.keymap.set('n', '<leader>fg', function()
 --	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 --end)
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
