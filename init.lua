@@ -6,46 +6,19 @@
 --    'git',
 --    'clone',
 --    '--depth 1',
---    'https://github.com/wbthomason/packer.nvim',
+--    'https://github.com/wbthomason/packer.nvim.git',
 --    packerpath,
 --  }
 --end
 --vim.opt.rtp:prepend(packerpath)
 
-vim.cmd [[packadd packer.nvim]]
+--local packerpath = vim.fn.stdpath('data') .. '/pack/packer/start/packer.nvim'
+--if not vim.loop.fs_stat(packerpath) then
+--  print("Running git")
+--  os.execute("git clone --depth 1 https://github.com/wbthomason/packer.nvim.git " .. packerpath)
+--end
 
-require('packer').startup(function(use)
-	use 'wbthomason/packer.nvim'
-	use 'rebelot/kanagawa.nvim'
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.2',
-		-- or                            , branch = '0.1.x',
-		requires = {
-			{'nvim-lua/plenary.nvim'},
-			{'BurntSushi/ripgrep'}
-		}
-  }
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
-  use 'tpope/vim-fugitive'
-  use {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
-    requires = {
-      -- LSP Support
-      {'neovim/nvim-lspconfig'},             -- Required
-      {'williamboman/mason.nvim'},           -- Optional
-      {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-      -- Autocompletion
-      {'hrsh7th/nvim-cmp'},     -- Required
-      {'hrsh7th/cmp-nvim-lsp'}, -- Required
-      {'L3MON4D3/LuaSnip'},     -- Required
-    }
-  }
-end)
+require('custom.packer')
 
 -- Settings
 vim.g.mapleader = " "
@@ -77,15 +50,6 @@ vim.keymap.set("n", "<leader>w", "<C-w>", { desc = "[W]indow operation" })
 vim.keymap.set("n", "<leader>bd", ":bd<cr>", { desc = "[B]uffer [D]elete" })
 vim.keymap.set("n", "<leader>bn", ":bn<cr>", { desc = "[B]uffer [N]ext" })
 vim.keymap.set("n", "<leader>bp", ":bp<cr>", { desc = "[B]uffer [P]revious" })
-
-local builtin = require('telescope.builtin')
-vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
---vim.keymap.set("n", "<leader>fg", function()
---	builtin.grep_string({ search = vim.fn.input("Grep > ") })
---end)
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-vim.keymap.set("n", "<leader> ", builtin.buffers, {})
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 
 -- Stolen from ThePrimeagen
 vim.keymap.set("v", "J", ":m \">+1<cr>gv=gv")
