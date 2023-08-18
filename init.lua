@@ -1,27 +1,8 @@
--- Install package manager
---    https://github.com/wbthomason/packer.nvim
---local packerpath = vim.fn.stdpath('data') .. '/pack/packer/start/packer.nvim'
---if not vim.loop.fs_stat(packerpath) then
---  vim.fn.system {
---    'git',
---    'clone',
---    '--depth 1',
---    'https://github.com/wbthomason/packer.nvim.git',
---    packerpath,
---  }
---end
---vim.opt.rtp:prepend(packerpath)
-
---local packerpath = vim.fn.stdpath('data') .. '/pack/packer/start/packer.nvim'
---if not vim.loop.fs_stat(packerpath) then
---  print("Running git")
---  os.execute("git clone --depth 1 https://github.com/wbthomason/packer.nvim.git " .. packerpath)
---end
-
-require('custom.packer')
+require('plugins')
 
 -- Settings
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.tabstop = 2
@@ -41,6 +22,7 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
+vim.o.completeopt = 'menuone,noselect'
 
 -- Keymaps
 vim.keymap.set("i", "jk", "<esc>")
