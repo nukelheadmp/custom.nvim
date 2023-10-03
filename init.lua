@@ -12,23 +12,23 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  {
-    'rebelot/kanagawa.nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme('kanagawa')
-      --vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-      --vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-    end,
-  },
   --{
-  --  'AlphaTechnolog/pywal.nvim',
-  --  as = 'pywal',
+  --  'rebelot/kanagawa.nvim',
+  --  lazy = false,
+  --  priority = 1000,
   --  config = function()
-  --    require("pywal").setup()
+  --    vim.cmd.colorscheme('kanagawa')
+  --    --vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+  --    --vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
   --  end,
   --},
+  {
+    'AlphaTechnolog/pywal.nvim',
+    as = 'pywal',
+    config = function()
+      require("pywal").setup()
+    end,
+  },
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
@@ -60,15 +60,22 @@ require("lazy").setup({
           }, -- Adds pretty icons to your documents
           ["core.dirman"] = { -- Manages Neorg workspaces
           config = {
-              workspaces = {
-                personal = "~/Nextcloud/Personal/Notes",
-                documentation = "~/Nextcloud/Priefert/Documentation",
-              },
-              default_workspace = "personal",
+            workspaces = {
+              personal = "~/Nextcloud/Personal/Notes",
+              documentation = "~/Nextcloud/Priefert/Documentation",
+            },
+            default_workspace = "personal",
           },
         },
       },
     }
+  end,
+},
+{
+  'nvim-lualine/lualine.nvim',
+  requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+  config = function()
+    require("lualine").setup()
   end,
 },
 })
