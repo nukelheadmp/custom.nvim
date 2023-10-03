@@ -58,9 +58,20 @@ require("lazy").setup({
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
-    --config = function()
-    --  require("lualine").setup()
-    --end,
+    config = function()
+      require("lualine").setup()
+    end,
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    },
+    config = function()
+      require("neo-tree").setup()
+    end,
   },
   {
     'nvim-telescope/telescope.nvim',
@@ -77,7 +88,7 @@ require("lazy").setup({
         end,
       },
     }
-  }, 
+  },
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
   {
     "nvim-neorg/neorg",
