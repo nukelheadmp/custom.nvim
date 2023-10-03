@@ -1,26 +1,14 @@
--- Setup language servers.
---local lspconfig = require('lspconfig')
---lspconfig.pyright.setup {}
---lspconfig.tsserver.setup {}
---lspconfig.rust_analyzer.setup {
---  -- Server-specific settings. See `:help lspconfig-setup`
---  settings = {
---    ['rust-analyzer'] = {},
---  },
---}
+local lsp = require('lsp-zero')
 
--- (Optional) Configure lua language server for neovim
---require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-
-local lsp = require('lsp-zero').preset({})
-
-lsp.on_attach(function(client, bufnr)
-  -- see :help lsp-zero-keybindings
-  -- to learn the available actions
-  lsp.default_keymaps({buffer = bufnr})
-end)
+lsp.preset('recommended')
 
 lsp.setup()
+
+--lsp.on_attach(function(client, bufnr)
+--  -- see :help lsp-zero-keybindings
+--  -- to learn the available actions
+--  lsp.default_keymaps({buffer = bufnr})
+--end)
 
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
@@ -78,17 +66,17 @@ end
 local servers = {
   -- clangd = {},
   -- gopls = {},
-  -- pyright = {},
+  pyright = {},
   -- rust_analyzer = {},
-  -- tsserver = {},
-  -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+  tsserver = {},
+  html = { filetypes = { 'html', 'twig', 'hbs'} },
 
-  --lua_ls = {
-  --  Lua = {
-  --    workspace = { checkThirdParty = false },
-  --    telemetry = { enable = false },
-  --  },
-  --},
+  lua_ls = {
+    Lua = {
+      workspace = { checkThirdParty = false },
+      telemetry = { enable = false },
+    },
+  },
 }
 
 -- Setup neovim lua configuration
@@ -118,48 +106,56 @@ mason_lspconfig.setup_handlers {
 
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
-local cmp = require 'cmp'
+--local cmp = require 'cmp'
+--local cmp_select = {behavior = cmp.SelectBehavior.select}
+--local cmp_mappings = lsp.defaults.cmp_mappings({
+--  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+--  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+--  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+--  ['<C-Space>'] = cmp.mapping.complete(),
+--})
+
 local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
-cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
-  mapping = cmp.mapping.preset.insert {
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete {},
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_locally_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.locally_jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-  },
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-  },
-}
+--cmp.setup {
+--  snippet = {
+--    expand = function(args)
+--      luasnip.lsp_expand(args.body)
+--    end,
+--  },
+--  mapping = cmp.mapping.preset.insert {
+--    ['<C-n>'] = cmp.mapping.select_next_item(),
+--    ['<C-p>'] = cmp.mapping.select_prev_item(),
+--    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+--    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+--    ['<C-Space>'] = cmp.mapping.complete {},
+--    ['<CR>'] = cmp.mapping.confirm {
+--      behavior = cmp.ConfirmBehavior.Replace,
+--      select = true,
+--    },
+--    ['<Tab>'] = cmp.mapping(function(fallback)
+--      if cmp.visible() then
+--        cmp.select_next_item()
+--      elseif luasnip.expand_or_locally_jumpable() then
+--        luasnip.expand_or_jump()
+--      else
+--        fallback()
+--      end
+--    end, { 'i', 's' }),
+--    ['<S-Tab>'] = cmp.mapping(function(fallback)
+--      if cmp.visible() then
+--        cmp.select_prev_item()
+--      elseif luasnip.locally_jumpable(-1) then
+--        luasnip.jump(-1)
+--      else
+--        fallback()
+--      end
+--    end, { 'i', 's' }),
+--  },
+--  sources = {
+--    { name = 'nvim_lsp' },
+--    { name = 'luasnip' },
+--  },
+--}
