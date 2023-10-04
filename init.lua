@@ -63,13 +63,16 @@ require("lazy").setup({
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
-  {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
-    config = function()
-      require("lualine").setup()
-    end,
-  },
+  'itchyny/lightline.vim',
+  'edkolev/promptline.vim',
+  'edkolev/tmuxline.vim',
+  --{
+  --  'nvim-lualine/lualine.nvim',
+  --  dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
+  --  config = function()
+  --    require("lualine").setup()
+  --  end,
+  --},
   {
     "nvim-neo-tree/neo-tree.nvim",
     dependencies = {
