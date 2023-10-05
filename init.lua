@@ -15,6 +15,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  --'chrisbra/Colorizer',
+  'norcalli/nvim-colorizer.lua',
+  --{
+  --  'norcalli/nvim-colorizer.lua',
+  --  config = function()
+  --    require("colorizer").setup()
+  --  end,
+  --},
   --{
   --  "EdenEast/nightfox.nvim",
   --  lazy = false, -- make sure we load this during startup if it is your main colorscheme
@@ -50,6 +58,7 @@ require("lazy").setup({
     end,
   },
   { "dhruvasagar/vim-table-mode" },
+  'Vonr/align.nvim',
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
