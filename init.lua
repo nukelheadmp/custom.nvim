@@ -15,15 +15,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  {
-    "EdenEast/nightfox.nvim",
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
-    config = function()
-      -- load the colorscheme here
-      vim.cmd("colorscheme nightfox")
-    end,
-  },
+  --{
+  --  "EdenEast/nightfox.nvim",
+  --  lazy = false, -- make sure we load this during startup if it is your main colorscheme
+  --  priority = 1000, -- make sure to load this before all the other start plugins
+  --  config = function()
+  --    -- load the colorscheme here
+  --    vim.cmd("colorscheme nightfox")
+  --  end,
+  --},
   --{
   --  "folke/tokyonight.nvim",
   --  lazy = false,
@@ -42,13 +42,13 @@ require("lazy").setup({
   --    --vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
   --  end,
   --},
-  --{
-  --  'AlphaTechnolog/pywal.nvim',
-  --  as = 'pywal',
-  --  config = function()
-  --    require("pywal").setup()
-  --  end,
-  --},
+  {
+    'AlphaTechnolog/pywal.nvim',
+    as = 'pywal',
+    config = function()
+      require("pywal").setup()
+    end,
+  },
   { "dhruvasagar/vim-table-mode" },
   {
     "folke/which-key.nvim",
@@ -63,16 +63,19 @@ require("lazy").setup({
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
-  'itchyny/lightline.vim',
-  'edkolev/promptline.vim',
+  --'itchyny/lightline.vim',
+  --'edkolev/promptline.vim',
   'edkolev/tmuxline.vim',
-  --{
-  --  'nvim-lualine/lualine.nvim',
-  --  dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
-  --  config = function()
-  --    require("lualine").setup()
-  --  end,
-  --},
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
+    config = function()
+      require("lualine").setup()
+    end,
+    opts = {
+      theme = "pywal-nvim",
+    },
+  },
   {
     "nvim-neo-tree/neo-tree.nvim",
     dependencies = {
