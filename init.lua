@@ -74,16 +74,14 @@ require("lazy").setup({
   'tpope/vim-rhubarb',
   --'itchyny/lightline.vim',
   --'edkolev/promptline.vim',
-  'edkolev/tmuxline.vim',
+  --'edkolev/tmuxline.vim',
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
     config = function()
       require("lualine").setup()
     end,
-    opts = {
-      theme = "pywal-nvim",
-    },
+    opts = { theme = "pywal-nvim" },
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
