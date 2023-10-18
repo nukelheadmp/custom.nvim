@@ -3,4 +3,4 @@
 --    theme = "pywal-nvim",
 --  },
 --}
-vim.cmd("colorscheme pywal")
+--vim.cmd("colorscheme pywal")

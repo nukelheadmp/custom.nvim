@@ -23,15 +23,15 @@ require("lazy").setup({
   --    require("colorizer").setup()
   --  end,
   --},
-  --{
-  --  "EdenEast/nightfox.nvim",
-  --  lazy = false, -- make sure we load this during startup if it is your main colorscheme
-  --  priority = 1000, -- make sure to load this before all the other start plugins
-  --  config = function()
-  --    -- load the colorscheme here
-  --    vim.cmd("colorscheme nightfox")
-  --  end,
-  --},
+  {
+    "EdenEast/nightfox.nvim",
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      -- load the colorscheme here
+      vim.cmd("colorscheme nightfox")
+    end,
+  },
   --{
   --  "folke/tokyonight.nvim",
   --  lazy = false,
@@ -50,13 +50,13 @@ require("lazy").setup({
   --    --vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
   --  end,
   --},
-  {
-    'AlphaTechnolog/pywal.nvim',
-    as = 'pywal',
-    config = function()
-      require("pywal").setup()
-    end,
-  },
+  --{
+  --  'AlphaTechnolog/pywal.nvim',
+  --  as = 'pywal',
+  --  config = function()
+  --    require("pywal").setup()
+  --  end,
+  --},
   { "dhruvasagar/vim-table-mode" },
   'Vonr/align.nvim',
   {
@@ -81,7 +81,7 @@ require("lazy").setup({
     config = function()
       require("lualine").setup()
     end,
-    opts = { theme = "pywal-nvim" },
+    --opts = { theme = "pywal-nvim" },
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
