@@ -75,7 +75,8 @@ local servers = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
-      diagnostics = { globals = { "vim" }, },
+      diagnostics = { globals = { "vim", "awesome", "client", "mouse", "screen" }, },
+      library = { ["/usr/share/awesome/lib"] = true },
     },
   },
 }
