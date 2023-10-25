@@ -160,4 +160,7 @@ require("lazy").setup({
     },
   },
   { "folke/neoconf.nvim", cmd = "Neoconf" },
+  { 'tpope/vim-dadbod' },
 })
+
+vim.cmd("source ~/.config/nvim/dadbod.vim")
