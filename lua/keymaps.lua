@@ -36,3 +36,4 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gc<Left><Left><Left>", { desc = "[S]earch and replace" })
 
 vim.keymap.set("n", "<leader>i", ":Neorg index<cr>", { desc = "Neorg [I]ndex" })
+--vim.keymap.set("i", "<C-i>c", "@end<esc>O@code ", { desc = "Insert code block" })
