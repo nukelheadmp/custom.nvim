@@ -35,5 +35,5 @@ vim.keymap.set("n", "Q", "<nop>")
 --vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gc<Left><Left><Left>", { desc = "[S]earch and replace" })
 
-vim.keymap.set("n", "<leader>i", ":Neorg index<cr>", { desc = "Neorg [I]ndex" })
+--vim.keymap.set("n", "<leader>i", ":Neorg index<cr>", { desc = "Neorg [I]ndex" })
 vim.keymap.set("i", "@code", "@end<esc>O@code ", { desc = "Insert [c]ode block" })

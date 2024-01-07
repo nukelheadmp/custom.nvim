@@ -33,7 +33,7 @@ require("lazy").setup({
   --  end,
   --},
   {
-    "folke/tokyonight.nvim",
+    'folke/tokyonight.nvim',
     lazy = false,
     priority = 1000,
     config = function()
@@ -57,11 +57,11 @@ require("lazy").setup({
   --    require("pywal").setup()
   --  end,
   --},
-  { "dhruvasagar/vim-table-mode" },
+  { 'dhruvasagar/vim-table-mode' },
   'Vonr/align.nvim',
   {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
+    'folke/which-key.nvim',
+    event = 'VeryLazy',
     init = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 300
@@ -83,17 +83,17 @@ require("lazy").setup({
   --  end,
   --  --opts = { theme = "pywal-nvim" },
   --},
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-    },
-    config = function()
-      require("neo-tree").setup()
-    end,
-  },
+  --{
+  --  "nvim-neo-tree/neo-tree.nvim",
+  --  dependencies = {
+  --    "nvim-lua/plenary.nvim",
+  --    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+  --    "MunifTanjim/nui.nvim",
+  --  },
+  --  config = function()
+  --    require("neo-tree").setup()
+  --  end,
+  --},
   {
     'nvim-telescope/telescope.nvim',
     dependencies = {
@@ -110,33 +110,35 @@ require("lazy").setup({
       },
     }
   },
-  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
-  {
-    "nvim-neorg/neorg",
-    build = ":Neorg sync-parsers",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("neorg").setup {
-        load = {
-          ["core.defaults"] = {}, -- Loads default behaviour
-          ["core.concealer"] = {
-            config = {
-              icon_preset = "diamond",
-            }
-          }, -- Adds pretty icons to your documents
-          ["core.dirman"] = { -- Manages Neorg workspaces
-            config = {
-              workspaces = {
-                personal = "~/Nextcloud/Personal/Notes",
-                documentation = "~/Nextcloud/Priefert/Documentation",
-              },
-              default_workspace = "personal",
-            },
-          },
-        },
-      }
-    end,
-  },
+  {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
+  'lervag/wiki.vim',
+  --'vimwiki/vimwiki',
+  --{
+  --  "nvim-neorg/neorg",
+  --  build = ":Neorg sync-parsers",
+  --  dependencies = { "nvim-lua/plenary.nvim" },
+  --  config = function()
+  --    require("neorg").setup {
+  --      load = {
+  --        ["core.defaults"] = {}, -- Loads default behaviour
+  --        ["core.concealer"] = {
+  --          config = {
+  --            icon_preset = "diamond",
+  --          }
+  --        }, -- Adds pretty icons to your documents
+  --        ["core.dirman"] = { -- Manages Neorg workspaces
+  --          config = {
+  --            workspaces = {
+  --              personal = "~/Nextcloud/Personal/Notes",
+  --              documentation = "~/Nextcloud/Priefert/Documentation",
+  --            },
+  --            default_workspace = "personal",
+  --          },
+  --        },
+  --      },
+  --    }
+  --  end,
+  --},
   {
     'VonHeikemen/lsp-zero.nvim',
     dependencies = {
