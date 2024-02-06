@@ -73,7 +73,7 @@ require("lazy").setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
   'itchyny/lightline.vim',
-  --'edkolev/promptline.vim',
+  'edkolev/promptline.vim',
   'edkolev/tmuxline.vim',
   --{
   --  'nvim-lualine/lualine.nvim',
