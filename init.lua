@@ -139,27 +139,42 @@ require("lazy").setup({
   --    }
   --  end,
   --},
+  --{
+  --  'VonHeikemen/lsp-zero.nvim',
+  --  dependencies = {
+  --    -- LSP Support
+  --    { 'neovim/nvim-lspconfig'},             -- Required
+  --    { 'williamboman/mason.nvim', config = true },           -- Optional
+  --    { 'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+  --    -- Autocompletion
+  --    { 'hrsh7th/nvim-cmp' },         -- Required
+  --    { 'hrsh7th/cmp-buffer' },       -- Optional
+  --    { 'hrsh7th/cmp-path' },         -- Optional
+  --    { 'hrsh7th/cmp-nvim-lsp' },     -- Required
+  --    { 'hrsh7th/cmp-nvim-lua' },     -- Required
+  --    { 'L3MON4D3/LuaSnip' },         -- Required
+  --    -- Stolen from nvim.kickstart
+  --    --{ 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
+  --    { 'j-hui/fidget.nvim' },
+  --    { 'folke/neodev.nvim' },
+  --  },
+  --},
   {
-    'VonHeikemen/lsp-zero.nvim',
+    'hrsh7th/nvim-cmp',
+    lazy = false,
+    priority = 100,
     dependencies = {
-      -- LSP Support
-      { 'neovim/nvim-lspconfig'},             -- Required
-      { 'williamboman/mason.nvim', config = true },           -- Optional
-      { 'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-      -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },         -- Required
-      { 'hrsh7th/cmp-buffer' },       -- Optional
-      { 'hrsh7th/cmp-path' },         -- Optional
-      { 'hrsh7th/cmp-nvim-lsp' },     -- Required
-      { 'hrsh7th/cmp-nvim-lua' },     -- Required
-      { 'L3MON4D3/LuaSnip' },         -- Required
-
-      -- Stolen from nvim.kickstart
-      --{ 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
-      { 'j-hui/fidget.nvim' },
-      { 'folke/neodev.nvim' },
+      'onsails/lspkind.nvim',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-buffer',
+      { 'L3MON4D3/LuaSnip', build = 'make install_jsregexp' },
+      'saadparwaiz1/cmp_luasnip',
     },
+    config = function()
+      require 'custom.completion'
+    end,
   },
   { 'folke/neoconf.nvim', cmd = 'Neoconf' },
   {
