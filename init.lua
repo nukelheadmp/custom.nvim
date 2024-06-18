@@ -15,10 +15,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  --'chrisbra/Colorizer',
-  'norcalli/nvim-colorizer.lua',
+  --"chrisbra/Colorizer",
+  { "norcalli/nvim-colorizer.lua" },
   --{
-  --  'norcalli/nvim-colorizer.lua',
+  --  "norcalli/nvim-colorizer.lua",
   --  config = function()
   --    require("colorizer").setup()
   --  end,
@@ -33,7 +33,7 @@ require("lazy").setup({
   --  end,
   --},
   --{
-  --  'folke/tokyonight.nvim',
+  --  "folke/tokyonight.nvim",
   --  lazy = false,
   --  priority = 1000,
   --  config = function()
@@ -41,43 +41,43 @@ require("lazy").setup({
   --  end,
   --},
   --{
-  --  'rebelot/kanagawa.nvim',
+  --  "rebelot/kanagawa.nvim",
   --  lazy = false,
   --  priority = 1000,
   --  config = function()
-  --    vim.cmd.colorscheme('kanagawa')
+  --    vim.cmd.colorscheme("kanagawa")
   --    --vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
   --    --vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
   --  end,
   --},
   --{
-  --  'AlphaTechnolog/pywal.nvim',
-  --  as = 'pywal',
+  --  "AlphaTechnolog/pywal.nvim",
+  --  as = "pywal",
   --  config = function()
   --    require("pywal").setup()
   --  end,
   --},
-  { 'dhruvasagar/vim-table-mode' },
-  'Vonr/align.nvim',
+  { "dhruvasagar/vim-table-mode" },
+  { "Vonr/align.nvim" },
   {
-    'folke/which-key.nvim',
-    event = 'VeryLazy',
+    "folke/which-key.nvim",
+    event = "VeryLazy",
     init = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 300
     end,
     opts = {}
   },
-  'christoomey/vim-tmux-navigator',
+  { "christoomey/vim-tmux-navigator" },
   -- Git related plugins
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
-  'itchyny/lightline.vim',
-  'edkolev/promptline.vim',
-  'edkolev/tmuxline.vim',
+  { "tpope/vim-fugitive" },
+  { "tpope/vim-rhubarb" },
+  { "itchyny/lightline.vim" },
+  { "edkolev/promptline.vim" },
+  { "edkolev/tmuxline.vim" },
   --{
-  --  'nvim-lualine/lualine.nvim',
-  --  dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
+  --  "nvim-lualine/lualine.nvim",
+  --  dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
   --  config = function()
   --    require("lualine").setup()
   --  end,
@@ -95,24 +95,24 @@ require("lazy").setup({
   --  end,
   --},
   {
-    'nvim-telescope/telescope.nvim',
+    "nvim-telescope/telescope.nvim",
     dependencies = {
-      {'nvim-lua/plenary.nvim'},
-      {'BurntSushi/ripgrep'},
+      {"nvim-lua/plenary.nvim"},
+      {"BurntSushi/ripgrep"},
       {
-        'nvim-telescope/telescope-fzf-native.nvim',
+        "nvim-telescope/telescope-fzf-native.nvim",
         -- NOTE: If you are having trouble with this installation,
         --       refer to the README for telescope-fzf-native for more instructions.
-        build = 'make',
+        build = "make",
         cond = function()
-          return vim.fn.executable 'make' == 1
+          return vim.fn.executable "make" == 1
         end,
       },
     }
   },
-  {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
-  'lervag/wiki.vim',
-  --'vimwiki/vimwiki',
+  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+  "lervag/wiki.vim",
+  --"vimwiki/vimwiki",
   --{
   --  "nvim-neorg/neorg",
   --  build = ":Neorg sync-parsers",
@@ -140,59 +140,59 @@ require("lazy").setup({
   --  end,
   --},
   {
-    'VonHeikemen/lsp-zero.nvim',
+    "VonHeikemen/lsp-zero.nvim",
     dependencies = {
       -- LSP Support
-      { 'neovim/nvim-lspconfig'},                              -- Required
-      { 'williamboman/mason.nvim', config = true },            -- Optional
-      { 'williamboman/mason-lspconfig.nvim'},                  -- Optional
+      { "neovim/nvim-lspconfig"},                              -- Required
+      { "williamboman/mason.nvim", config = true },            -- Optional
+      { "williamboman/mason-lspconfig.nvim"},                  -- Optional
       -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },                                  -- Required
-      { 'hrsh7th/cmp-buffer' },                                -- Optional
-      { 'hrsh7th/cmp-path' },                                  -- Optional
-      { 'hrsh7th/cmp-nvim-lsp' },                              -- Required
-      { 'hrsh7th/cmp-nvim-lua' },                              -- Required
-      { 'L3MON4D3/LuaSnip', build = 'make install_jsregexp' }, -- Required
+      { "hrsh7th/nvim-cmp" },                                  -- Required
+      { "hrsh7th/cmp-buffer" },                                -- Optional
+      { "hrsh7th/cmp-path" },                                  -- Optional
+      { "hrsh7th/cmp-nvim-lsp" },                              -- Required
+      { "hrsh7th/cmp-nvim-lua" },                              -- Required
+      { "L3MON4D3/LuaSnip", build = "make install_jsregexp" }, -- Required
       -- Stolen from nvim.kickstart
-      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
-      { 'j-hui/fidget.nvim' },
-      { 'folke/neodev.nvim' },
+      { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
+      --{ "j-hui/fidget.nvim" },
+      { "folke/neodev.nvim" },
       -- Stolen from TJ DeVries
-      { 'saadparwaiz1/cmp_luasnip' },
-      { 'onsails/lspkind.nvim' },
+      { "saadparwaiz1/cmp_luasnip" },
+      { "onsails/lspkind.nvim" },
     },
     config = function()
-      require 'custom.completion'
+      require "custom.completion"
     end,
   },
   --{ -- From TJ DeVries YouTube channel
-  --  'hrsh7th/nvim-cmp',
+  --  "hrsh7th/nvim-cmp",
   --  lazy = false,
   --  priority = 100,
   --  dependencies = {
-  --    'onsails/lspkind.nvim',
-  --    'hrsh7th/cmp-nvim-lsp',
-  --    'hrsh7th/cmp-path',
-  --    'hrsh7th/cmp-buffer',
-  --    { 'L3MON4D3/LuaSnip', build = 'make install_jsregexp' },
-  --    'saadparwaiz1/cmp_luasnip',
+  --    "onsails/lspkind.nvim",
+  --    "hrsh7th/cmp-nvim-lsp",
+  --    "hrsh7th/cmp-path",
+  --    "hrsh7th/cmp-buffer",
+  --    { "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
+  --    "saadparwaiz1/cmp_luasnip",
   --  },
   --  config = function()
-  --    require 'custom.completion'
+  --    require "custom.completion"
   --  end,
   --},
-  { 'folke/neoconf.nvim', cmd = 'Neoconf' },
+  { "folke/neoconf.nvim", cmd = "Neoconf" },
   {
-    'kristijanhusak/vim-dadbod-ui',
+    "kristijanhusak/vim-dadbod-ui",
     dependencies = {
-      { 'tpope/vim-dadbod', lazy = true },
-      { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
+      { "tpope/vim-dadbod", lazy = true },
+      { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
     },
     cmd = {
-      'DBUI',
-      'DBUIToggle',
-      'DBUIAddConnection',
-      'DBUIFindBuffer',
+      "DBUI",
+      "DBUIToggle",
+      "DBUIAddConnection",
+      "DBUIFindBuffer",
     },
     init = function()
       vim.g.db_ui_use_nerd_fonts = 1
