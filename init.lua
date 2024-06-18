@@ -32,14 +32,14 @@ require("lazy").setup({
   --    vim.cmd("colorscheme nightfox")
   --  end,
   --},
-  {
-    'folke/tokyonight.nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd([[colorscheme tokyonight]])
-    end,
-  },
+  --{
+  --  'folke/tokyonight.nvim',
+  --  lazy = false,
+  --  priority = 1000,
+  --  config = function()
+  --    vim.cmd([[colorscheme tokyonight]])
+  --  end,
+  --},
   --{
   --  'rebelot/kanagawa.nvim',
   --  lazy = false,
@@ -139,43 +139,48 @@ require("lazy").setup({
   --    }
   --  end,
   --},
-  --{
-  --  'VonHeikemen/lsp-zero.nvim',
-  --  dependencies = {
-  --    -- LSP Support
-  --    { 'neovim/nvim-lspconfig'},             -- Required
-  --    { 'williamboman/mason.nvim', config = true },           -- Optional
-  --    { 'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-  --    -- Autocompletion
-  --    { 'hrsh7th/nvim-cmp' },         -- Required
-  --    { 'hrsh7th/cmp-buffer' },       -- Optional
-  --    { 'hrsh7th/cmp-path' },         -- Optional
-  --    { 'hrsh7th/cmp-nvim-lsp' },     -- Required
-  --    { 'hrsh7th/cmp-nvim-lua' },     -- Required
-  --    { 'L3MON4D3/LuaSnip' },         -- Required
-  --    -- Stolen from nvim.kickstart
-  --    --{ 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
-  --    { 'j-hui/fidget.nvim' },
-  --    { 'folke/neodev.nvim' },
-  --  },
-  --},
   {
-    'hrsh7th/nvim-cmp',
-    lazy = false,
-    priority = 100,
+    'VonHeikemen/lsp-zero.nvim',
     dependencies = {
-      'onsails/lspkind.nvim',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-path',
-      'hrsh7th/cmp-buffer',
-      { 'L3MON4D3/LuaSnip', build = 'make install_jsregexp' },
-      'saadparwaiz1/cmp_luasnip',
+      -- LSP Support
+      { 'neovim/nvim-lspconfig'},                              -- Required
+      { 'williamboman/mason.nvim', config = true },            -- Optional
+      { 'williamboman/mason-lspconfig.nvim'},                  -- Optional
+      -- Autocompletion
+      { 'hrsh7th/nvim-cmp' },                                  -- Required
+      { 'hrsh7th/cmp-buffer' },                                -- Optional
+      { 'hrsh7th/cmp-path' },                                  -- Optional
+      { 'hrsh7th/cmp-nvim-lsp' },                              -- Required
+      { 'hrsh7th/cmp-nvim-lua' },                              -- Required
+      { 'L3MON4D3/LuaSnip', build = 'make install_jsregexp' }, -- Required
+      -- Stolen from nvim.kickstart
+      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
+      { 'j-hui/fidget.nvim' },
+      { 'folke/neodev.nvim' },
+      -- Stolen from TJ DeVries
+      { 'saadparwaiz1/cmp_luasnip' },
+      { 'onsails/lspkind.nvim' },
     },
     config = function()
       require 'custom.completion'
     end,
   },
+  --{ -- From TJ DeVries YouTube channel
+  --  'hrsh7th/nvim-cmp',
+  --  lazy = false,
+  --  priority = 100,
+  --  dependencies = {
+  --    'onsails/lspkind.nvim',
+  --    'hrsh7th/cmp-nvim-lsp',
+  --    'hrsh7th/cmp-path',
+  --    'hrsh7th/cmp-buffer',
+  --    { 'L3MON4D3/LuaSnip', build = 'make install_jsregexp' },
+  --    'saadparwaiz1/cmp_luasnip',
+  --  },
+  --  config = function()
+  --    require 'custom.completion'
+  --  end,
+  --},
   { 'folke/neoconf.nvim', cmd = 'Neoconf' },
   {
     'kristijanhusak/vim-dadbod-ui',
