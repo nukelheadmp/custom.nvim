@@ -1,8 +1,6 @@
 require("settings")
 require("keymaps")
 
-vim.cmd("colorscheme slate")
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -14,6 +12,7 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
@@ -164,7 +163,7 @@ require("lazy").setup({
       { "onsails/lspkind.nvim" },
     },
     config = function()
-      require "custom.completion"
+      require("custom.completion")
     end,
   },
   --{ -- From TJ DeVries YouTube channel

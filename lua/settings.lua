@@ -27,3 +27,4 @@ vim.opt.colorcolumn = "80"
 vim.o.foldlevelstart = 99
 
 --vim.fn.setreg('a', ':test')
+vim.cmd("colorscheme slate")
