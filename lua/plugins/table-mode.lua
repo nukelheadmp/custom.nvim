@@ -1,0 +1,1 @@
+../plugins-available/table-mode.lua

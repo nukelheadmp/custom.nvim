@@ -1,0 +1,1 @@
+../plugins-available/vim-fugitive.lua
