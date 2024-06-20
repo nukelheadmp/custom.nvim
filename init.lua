@@ -16,5 +16,3 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
-
-vim.cmd("source ~/.config/nvim/dadbod.vim")
