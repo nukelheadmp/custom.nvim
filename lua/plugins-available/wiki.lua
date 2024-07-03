@@ -1,4 +1,8 @@
 return {
-  "lervag/wiki.vim",
-  --"vimwiki/vimwiki",
+  {
+    "lervag/wiki.vim",
+    config = function()
+      vim.g.wiki_root = '~/Nextcloud/Personal/Notes'
+    end
+  }
 }
