@@ -2,7 +2,7 @@ return {
   {
     "lervag/wiki.vim",
     config = function()
-      vim.g.wiki_root = '~/Nextcloud/Personal/Notes'
+      vim.g.wiki_root = '~/Sync/Notes'
     end
   }
 }
