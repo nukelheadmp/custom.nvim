@@ -12,7 +12,7 @@
 "let g:db = g:dadbods[0].url
 
 let g:dbs = {
-      \ "prod_ax": "jdbc:sqlserver://megatron.pmc.com;database=prod_ax;authenticationScheme=NTLM;integratedSecurity=true;domain=PMC",
-      \ "test_ax": "jdbc:sqlserver://data.pmc.com;database=test_ax;authenticationScheme=NTLM;integratedSecurity=true;domain=PMC",
-      \ "ReportServer": "jdbc:sqlserver://pm-db-02.pmc.com;database=ReportServer;authenticationScheme=NTLM;integratedSecurity=true;domain=PMC",
+      \ "prod_ax": "jdbc:sqlserver://pm-db-01.PMC.COM;database=prod_ax;authenticationScheme=JavaKerberos;integratedSecurity=true",
+      \ "data": "jdbc:sqlserver://data.PMC.COM;authenticationScheme=JavaKerberos;integratedSecurity=true;domain=PMC",
+      \ "pm-db-02": "jdbc:sqlserver://pm-db-02.PMC.COM;database=master;authenticationScheme=JavaKerberos;integratedSecurity=true;domain=PMC",
       \ }
