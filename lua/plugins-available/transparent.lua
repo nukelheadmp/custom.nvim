@@ -2,7 +2,8 @@ return {
   {
     "xiyaowong/transparent.nvim",
     config = function()
-      require("nightfox").setup{ transparent = vim.g.transparent_enabled }
+      vim.g.transparent_groups = vim.list_extend(vim.g.transparent_groups or {}, { "ExtraGroup" })
+      --require("nightfox").setup{ transparent = vim.g.transparent_enabled }
     end,
   }
 }
