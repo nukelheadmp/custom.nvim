@@ -27,4 +27,4 @@ vim.opt.updatetime = 50
 vim.o.foldlevelstart = 99
 
 --vim.fn.setreg('a', ':test')
-vim.cmd("colorscheme slate")
+--vim.cmd("colorscheme slate")
