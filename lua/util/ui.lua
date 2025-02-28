@@ -4,6 +4,7 @@ local M = {}
 --- Besides some other nice features, this primarily prevents neo-tree from
 --- taking up the whole screen after deleting a buffer.
 --- (Thank you folke)
+--- (Thank you stefanpartheym) https://github.com/nvim-neo-tree/neo-tree.nvim/issues/1504#issuecomment-2379227654
 ---@param buf number?
 function M.bufremove(buf)
   buf = buf or 0
