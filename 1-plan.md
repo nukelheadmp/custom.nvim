@@ -1,6 +1,13 @@
 Plan
 ====
 
+# New agenda
+
+- Snacks.nvim
+- LazyGit
+
+Setup from Omarchy.org (Hyprland Arch)
+
 # Keymaps
 
 Set up keymaps for window exchange (ctrl-w x) and rotate (ctrl-w r or ctrl-w R)
