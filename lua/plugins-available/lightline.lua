@@ -1,13 +1,11 @@
 return {
-  { "itchyny/lightline.vim" },
+  {
+    "itchyny/lightline.vim",
+    config = function()
+      -- powerlineish, nord, seoul256
+      vim.g.lightline = { colorscheme = "seoul256" }
+    end
+  },
   { "edkolev/promptline.vim" },
   { "edkolev/tmuxline.vim" },
-  --{
-  --  "nvim-lualine/lualine.nvim",
-  --  dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
-  --  config = function()
-  --    require("lualine").setup()
-  --  end,
-  --  --opts = { theme = "pywal-nvim" },
-  --},
 }
