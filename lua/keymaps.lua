@@ -41,5 +41,6 @@ vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gc<Left><Left>
 --vim.keymap.set("n", "<leader>i", ":Neorg index<cr>", { desc = "Neorg [I]ndex" })
 vim.keymap.set("i", "@code", "@end<esc>O@code ", { desc = "Insert [c]ode block" })
 
-vim.keymap.set("n", "<leader>d", "<nop>", { desc = "[D]oc Repos" })
-vim.keymap.set("n", "<leader>dd", ":e " .. vim.g.docrepo .. "/index.md<cr>", { desc = "[D]efault Repo" })
+vim.keymap.set("n", "<leader>d", "<nop>", { desc = "[D]ocs" })
+vim.keymap.set("n", "<leader>dn", ":e " .. vim.g.docrepos.notes .. "/index.md<cr>", { desc = "[N]otes" })
+vim.keymap.set("n", "<leader>ds", ":e " .. vim.g.docrepos.scripts .. "/<cr>", { desc = "[S]cripts" })
