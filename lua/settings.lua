@@ -29,3 +29,5 @@ vim.o.foldlevelstart = 99
 
 --vim.fn.setreg('a', ':test')
 --vim.cmd("colorscheme slate")
+
+vim.g.docrepo = os.getenv('HOME') .. "/SynologyDrive/Personal/Notes"

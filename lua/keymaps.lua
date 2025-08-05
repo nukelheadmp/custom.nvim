@@ -32,11 +32,14 @@ vim.keymap.set("n", "<leader>y", "\"+y", { desc = "[Y]ank to system clipboard" }
 vim.keymap.set("v", "<leader>y", "\"+y", { desc = "[Y]ank to system clipboard" })
 vim.keymap.set("n", "<leader>Y", "\"+Y", { desc = "[Y]ank to system clipboard" })
 vim.keymap.set("n", "<leader>p", "\"+p", { desc = "[P]aste from system clipboard" })
-vim.keymap.set("n", "<leader>d", "\"_d", { desc = "[D]elete to void register" })
-vim.keymap.set("v", "<leader>d", "\"_d", { desc = "[D]elete to void register" })
+vim.keymap.set("n", "<leader>r", "\"_d", { desc = "[D]elete to void register" })
+vim.keymap.set("v", "<leader>r", "\"_d", { desc = "[D]elete to void register" })
 vim.keymap.set("n", "Q", "<nop>")
 --vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gc<Left><Left><Left>", { desc = "[S]earch and replace" })
 
 --vim.keymap.set("n", "<leader>i", ":Neorg index<cr>", { desc = "Neorg [I]ndex" })
 vim.keymap.set("i", "@code", "@end<esc>O@code ", { desc = "Insert [c]ode block" })
+
+vim.keymap.set("n", "<leader>d", "<nop>", { desc = "[D]oc Repos" })
+vim.keymap.set("n", "<leader>dd", ":e " .. vim.g.docrepo .. "/index.md<cr>", { desc = "[D]efault Repo" })
