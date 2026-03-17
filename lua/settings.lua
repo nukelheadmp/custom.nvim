@@ -31,6 +31,7 @@ vim.o.foldlevelstart = 99
 --vim.cmd("colorscheme slate")
 
 vim.g.docrepos = {
+  documentation = os.getenv('HOME') .. "/SynologyDrive/Personal/Documentation",
   notes = os.getenv('HOME') .. "/SynologyDrive/Personal/Notes",
   scripts = os.getenv('HOME') .. "/SynologyDrive/Personal/Scripts",
 }
